@@ -1,0 +1,15 @@
+{% extends 'np_app/base.html' %}
+{% block title %}
+{{title}}
+{% endblock %}
+{% block content %}
+{% for el in post %}
+<br>
+    <div class="alert alert-secondary">
+        <h4>{{ el.post_title }}</h4>
+        <pre>{{ el.post_text }}</pre>
+       <pre>{{ el.post_author}}  {{ el.post_date }}</pre>
+
+    </div>
+    {% endfor %}
+{% endblock %}

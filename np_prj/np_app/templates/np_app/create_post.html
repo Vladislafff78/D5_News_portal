@@ -1,0 +1,19 @@
+{% extends 'np_app/base.html' %}
+
+{% block title %}
+Создать новую статью
+{% endblock %}
+
+{% block content %}
+<br>
+<h4> Создать новую статью </h4>
+    <form method="post" >
+        {% csrf_token %}
+        {{form.post_title}}<br>
+        {{form.post_text}}<br>
+        {{form.post_author}}<br>
+        <button type="submit" class="btn btn-success">Добавить</button>
+        <span>{{ error }}</span>
+    </form>
+
+{% endblock %}
