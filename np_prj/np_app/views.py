@@ -8,7 +8,8 @@ from .models import Post
 from .forms import PostForm
 
 
-class CreatePost(LoginRequiredMixin, DetailView, ListView, CreateView):
+class CreatePost(LoginRequiredMixin, CreateView):
+    raise_exception = True
     form_class = PostForm
     model = Post
     template_name = 'create_post.html'
