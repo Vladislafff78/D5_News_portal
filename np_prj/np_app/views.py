@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic import (CreateView)
 from django.shortcuts import render, redirect
 
@@ -6,7 +7,8 @@ from .models import Post
 from .forms import PostForm
 
 
-class CreatePost(LoginRequiredMixin, CreateView):
+class CreatePost(PermissionRequiredMixin, CreateView):
+    permission_required = 'np_app.add_post'
     raise_exception = True
     form_class = PostForm
     model = Post
