@@ -12,10 +12,6 @@ def posts(request):
     return render(request, 'posts.html', {'title': 'Новостной портал - Статьи', 'post': post})
 
 
-def authors(request):
-    return render(request, 'authors.html')
-
-
 def create_post(request):
     error = ''
     if request.method == 'POST':
