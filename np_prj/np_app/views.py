@@ -1,11 +1,17 @@
-from django.shortcuts import render, redirect
-
-
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import (CreateView)
+from django.views.generic import (
+   ListView, DetailView, CreateView, UpdateView, DeleteView
+)
+from django.shortcuts import render, redirect
 
 from .models import Post
 from .forms import PostForm
+
+
+class CreatePost(LoginRequiredMixin, DetailView, ListView, CreateView):
+    form_class = PostForm
+    model = Post
+    template_name = 'create_post.html'
 
 
 def index(request):
@@ -32,12 +38,4 @@ def create_post(request):
         'form': form,
         'error': error
     }
-
     return render(request, 'create_post.html', context)
-
-
-class PostCreate(LoginRequiredMixin, CreateView):
-    raise_exception = True
-    form_class = PostForm
-    model = Post
-    template_name = 'create_post.html'

@@ -24,9 +24,10 @@
         </form>
 
         <div class="text-end">
-          <form method="post" class="btn btn-outline-light me-2" action="{% url 'login' %}"> {% csrf_token %}{{ form.as_p }}
+          <form method="post" class="btn btn-outline-light me-2" action="{% url 'login' %}"> {% csrf_token %}
               <input type="submit" value="login">
           </form>
+
           <button type="button" class="btn btn-info">Sign-up</button>
         </div>
       </div>
