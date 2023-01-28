@@ -14,9 +14,9 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/" class="nav-link px-2 text-secondary">Новостной портал</a></li>
-          <li><a href="{% url 'posts' %}" class="nav-link px-2 text-white">Статьи</a></li>
-          <li><a href="{% url 'create_post' %}" class="nav-link px-2 text-white">Создать статью</a></li>
+          <li><a href="/" class="nav-link px-2 text-info">Новостной портал</a></li>
+          <li><a href="{% url 'posts' %}" class="nav-link px-2 text-info">Статьи</a></li>
+          <li><a href="{% url 'create_post' %}" class="nav-link px-2 text-info">Создать статью</a></li>
         </ul>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -27,7 +27,7 @@
           <form method="post" class="btn btn-outline-light me-2" action="{% url 'login' %}"> {% csrf_token %}{{ form.as_p }}
               <input type="submit" value="login">
           </form>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+          <button type="button" class="btn btn-info">Sign-up</button>
         </div>
       </div>
   </header>
